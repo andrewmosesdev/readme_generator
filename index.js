@@ -44,12 +44,18 @@ async function generateReadMe() {
   // console.log(answers);
 
   // const to house template literal to dynamically apply to readme
-  const dynamicReadMe = `
-    `;
+  //   const dynamicReadMe = ;
   // console.log(dynamReadMe)
+  function writeToFile(readme, data) {
+    return fs.writeFileSync(path.join(process.cwd(), readme), data);
+  }
+
+  // ----------------------------------------
+  // need to write function for inquirer prompts, inquirer responses, console.log, and call writeToFile
+  // ----------------------------------------
 
   // replace index.html w/ readme file
-  await writeFileAsync("index.html", dynamicReadMe);
+  await writeFileAsync("readme.md", dynamicReadMe);
 }
 
 // run function to generate ReadMe
