@@ -1,10 +1,11 @@
+// required packages and consts
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
 const generateMarkdown = require("./utils/generateMarkdown");
-const { FORMERR } = require("dns");
 const appendFile = util.promisify(fs.appendFile);
 
+// inquirer prompts for user interaction
 inquirer
   .prompt([
     {
@@ -23,9 +24,9 @@ inquirer
       message: "How can a user install this project?",
     },
     {
-        type: "input",
-        name: "test",
-        message: "Were any tests run?",
+      type: "input",
+      name: "test",
+      message: "Were any tests run?",
     },
     {
       type: "input",
@@ -49,13 +50,16 @@ inquirer
       choices: ["MIT", "GPL", "BSD-3"],
     },
   ])
+    // then initialize answers
   .then((answers) => {
     init(answers);
   })
   .catch((error) => {
+    // log errors
     console.log(error);
   });
 
+    // asyncronous function to initialize answers
 async function init(answers) {
   try {
     
@@ -76,13 +80,9 @@ async function init(answers) {
     // push responses to an array
     responseArray.push(q1, q2, q3, q4, q5, q6, q7, q8);
 
-    console.log(responseArray)
-    // append responses to README file with forEach
-    // for(let i = 0; i < responseArray.length; i++) {
-    //     fs.appendFileSync("README.md", responseArray[i], err => {
-    //         if (err) throw err;
-    //     } )
-    // }
+    // console.log(responseArray)
+   
+    // use forEach to loop through new array and append each file syncronously (need appendFileSync, not appendFile otherwise they come out in random order)
     responseArray.forEach((item) => {
       fs.appendFileSync("README.md", item, (err) => {
         if (err) throw err;
@@ -92,24 +92,3 @@ async function init(answers) {
     console.log(error);
   }
 }
-// const answers = await inquirer.prompt(questions);
-
-// function to write README file
-// function writeToFile(readme, data) {
-//   return fs.writeFileSync(path.join(process.cwd(), readme), data);
-// }
-
-// await writeFileAsync("readme.md", await generateMarkdown);
-
-// function to initialize program
-// function init() {}
-
-// function call to initialize program
-// init();
-
-// run function to generate ReadMe
-// generateReadMe();
-
-// ----------------------------------------
-// need to write function for inquirer prompts, inquirer responses, console.log, and call writeToFile
-// ----------------------------------------

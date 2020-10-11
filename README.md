@@ -1,5 +1,8 @@
 # TITLE 
-### SUMM 
+  
+
+  
+### SUMMARY 
 
   ## Table of Contents:
   1. Install
@@ -11,10 +14,10 @@
   
   ### Installation: INSTALL 
 
-  ### Testing: TEST 
+  ### Testing: TESTS 
 
   ### GitHub Repository: REPO 
 
-  ### Github Deployment: DEPLY 
+  ### Github Deployment: DEPLOY 
 
-  ### Credits: CRED 
+  ### Credits: CREDIT 
