@@ -1,12 +1,12 @@
-// constants for json packages
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
+const generateMarkdown = require("./utils/generateMarkdown");
+const { FORMERR } = require("dns");
+const appendFile = util.promisify(fs.appendFile);
 
-// function to generate the readme
-async function generateReadMe() {
-  // const questions array to house question inputs
-  const questions = [
+inquirer
+  .prompt([
     {
       type: "input",
       name: "title",
@@ -19,44 +19,97 @@ async function generateReadMe() {
     },
     {
       type: "input",
-      name: "acceptance criteria",
-      message: "Add the acceptance criteria",
+      name: "installation",
+      message: "How can a user install this project?",
+    },
+    {
+        type: "input",
+        name: "test",
+        message: "Were any tests run?",
     },
     {
       type: "input",
-      name: "github link",
+      name: "githubLink",
       message: "What is your GitHub repo url?",
     },
     {
       type: "input",
-      name: "github deployed",
+      name: "githubDeployed",
       message: "What is your GitHub deployment url?",
     },
     {
       type: "input",
-      name: "extra info",
-      message: "What additional information should be included in your readme?",
+      name: "credits",
+      message: "Any credit to give to anyone?",
     },
-  ];
+    {
+      type: "list",
+      name: "license",
+      message: "Which license are you using?",
+      choices: ["MIT", "GPL", "BSD-3"],
+    },
+  ])
+  .then((answers) => {
+    init(answers);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
-  // const for answers w/ await
-  const answers = await inquirer.prompt(questions);
-  // console.log(answers);
+async function init(answers) {
+  try {
+    
+    // create array to push responses to, then forEach to loop through
+    let responseArray = [];
+    // console.log(answers);
 
-  // const to house template literal to dynamically apply to readme
-  //   const dynamicReadMe = ;
-  // console.log(dynamReadMe)
-  function writeToFile(readme, data) {
-    return fs.writeFileSync(path.join(process.cwd(), readme), data);
+    // pull responses from questions numerically
+    const q1 = await generateMarkdown.projectTitle(answers.title);
+    const q2 = await generateMarkdown.projectSummary(answers.summary);
+    const q3 = await generateMarkdown.tableOfContents();
+    const q4 = await generateMarkdown.installation(answers.installation);
+    const q5 = await generateMarkdown.testing(answers.test);
+    const q6 = await generateMarkdown.githubLink(answers.githubLink);
+    const q7 = await generateMarkdown.deployedLink(answers.githubDeployed)
+    const q8 = await generateMarkdown.credits(answers.credits)
+
+    // push responses to an array
+    responseArray.push(q1, q2, q3, q4, q5, q6, q7, q8);
+
+    console.log(responseArray)
+    // append responses to README file with forEach
+    // for(let i = 0; i < responseArray.length; i++) {
+    //     fs.appendFileSync("README.md", responseArray[i], err => {
+    //         if (err) throw err;
+    //     } )
+    // }
+    responseArray.forEach((item) => {
+      fs.appendFileSync("README.md", item, (err) => {
+        if (err) throw err;
+      });
+    });
+  } catch (error) {
+    console.log(error);
   }
-
-  // ----------------------------------------
-  // need to write function for inquirer prompts, inquirer responses, console.log, and call writeToFile
-  // ----------------------------------------
-
-  // replace index.html w/ readme file
-  await writeFileAsync("readme.md", dynamicReadMe);
 }
+// const answers = await inquirer.prompt(questions);
+
+// function to write README file
+// function writeToFile(readme, data) {
+//   return fs.writeFileSync(path.join(process.cwd(), readme), data);
+// }
+
+// await writeFileAsync("readme.md", await generateMarkdown);
+
+// function to initialize program
+// function init() {}
+
+// function call to initialize program
+// init();
 
 // run function to generate ReadMe
-generateReadMe();
+// generateReadMe();
+
+// ----------------------------------------
+// need to write function for inquirer prompts, inquirer responses, console.log, and call writeToFile
+// ----------------------------------------

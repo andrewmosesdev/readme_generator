@@ -1,24 +1,16 @@
 {
-  "name": "readme_generator",
+  "name": "static-site",
   "version": "1.0.0",
-  "description": "an application to generator a readme file for project details",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/andrewmosesdrive/readme_generator.git"
-  },
-  "author": "Andrew Moses",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/andrewmosesdrive/readme_generator/issues"
-  },
-  "homepage": "https://github.com/andrewmosesdrive/readme_generator#readme",
   "dependencies": {
     "fs": "0.0.1-security",
-    "inquirer": "^7.3.3",
+    "inquirer": "^6.3.1",
     "util": "^0.12.3"
   }
 }
