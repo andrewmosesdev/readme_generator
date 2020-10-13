@@ -1,4 +1,4 @@
-// required packages and consts
+// required packages and const
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
@@ -30,6 +30,11 @@ inquirer
     },
     {
       type: "input",
+      name: "usage",
+      message: "How does a user run this application?"
+    },
+    {
+      type: "input",
       name: "githubLink",
       message: "What is your GitHub repo url?",
     },
@@ -37,6 +42,16 @@ inquirer
       type: "input",
       name: "githubDeployed",
       message: "What is your GitHub deployment url?",
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is your email address?"
+    },
+    {
+        type: "input",
+        name: "collaborators",
+        message: "Did anyone collaborate on this application?"
     },
     {
       type: "input",
@@ -59,7 +74,7 @@ inquirer
     console.log(error);
   });
 
-    // asyncronous function to initialize answers
+    // asynchronous function to initialize answers
 async function init(answers) {
   try {
     
@@ -67,22 +82,25 @@ async function init(answers) {
     let responseArray = [];
     // console.log(answers);
 
-    // pull responses from questions numerically
+    // pull responses from questions in numerical order
     const q1 = await generateMarkdown.projectTitle(answers.title);
     const q2 = await generateMarkdown.projectSummary(answers.summary);
     const q3 = await generateMarkdown.tableOfContents();
     const q4 = await generateMarkdown.installation(answers.installation);
     const q5 = await generateMarkdown.testing(answers.test);
-    const q6 = await generateMarkdown.githubLink(answers.githubLink);
-    const q7 = await generateMarkdown.deployedLink(answers.githubDeployed)
-    const q8 = await generateMarkdown.credits(answers.credits)
+    const q6 = await generateMarkdown.usage(answers.usage)
+    const q7 = await generateMarkdown.githubLink(answers.githubLink);
+    const q8 = await generateMarkdown.deployedLink(answers.githubDeployed)
+    const q9 = await generateMarkdown.email(answers.email)
+    const q10 = await generateMarkdown.collaborators(answers.collaborators)
+    const q11 = await generateMarkdown.credits(answers.credits)
 
-    // push responses to an array
-    responseArray.push(q1, q2, q3, q4, q5, q6, q7, q8);
+    // push responses to an array in the same order
+    responseArray.push(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11);
 
     // console.log(responseArray)
    
-    // use forEach to loop through new array and append each file syncronously (need appendFileSync, not appendFile otherwise they come out in random order)
+    // use forEach to loop through new array and append each file synchronously (need appendFileSync, not appendFile otherwise they come out in random order)
     responseArray.forEach((item) => {
       fs.appendFileSync("README.md", item, (err) => {
         if (err) throw err;

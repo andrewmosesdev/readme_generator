@@ -1,26 +1,49 @@
-
-# ReadMe Generator 
-  
-### The ReadMe Generator is an application designed to streamline the process of creating a ReadMe file to accompany any given project. 
+# TITLE 
   
 
+  ## SUMMARY 
+  
+
+  
   ## Table of Contents:
-  1. Install
-  2. Testing
-  3. Credits
-  4. License
+  * [Installation](#Installation) 
+  * [Testing](#Testing)
+  * [Usage](#Usage)
+  * [GitHub](#Repository)
+  * [Email](#Email)
+  * [Collaborators](#Collaborators)
+  * [Credits](#Credits)
+  * [License](#License)
+  
+  ## Installation: INSTALL 
   
 
-  ### Installation: A user can simply run this application in VScode. They will be prompted by questions relevant to the creation of any application which will be dynamically appended to an existing ReadMe file. 
+  
+  ## Testing: TESTS 
   
 
-  ### Testing: Numerous tests were run on this application to ensure it functioned seamlessly. 
+  
+  ## Usage: RUN
   
 
-  ### GitHub Repository: www.github.com/andrewmosesdrive 
+  
+  ## Repository: REPO 
   
 
-  ### Github Deployment: This application was built from the ground up in Node.js, so there is no deployed version. 
+  
+  ## Deployment: DEPLOY 
   
 
-  ### Credits: Credit to Joseph Jepson (@alligatormonday) and Dane Burns (@daneb91) for guidance on async functions and general troubleshooting. 
+  
+  ## Email EMAIL
+  
+
+  
+  ## Collaborators: N/A
+  
+
+  
+  ## Credits: N/A 
+  
+
+  
