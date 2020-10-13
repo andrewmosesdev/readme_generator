@@ -62,7 +62,7 @@ inquirer
       type: "list",
       name: "license",
       message: "Which license are you using?",
-      choices: ["MIT", "GPL", "BSD-3"],
+      choices: ["MIT", "GPL", "Apache"],
     },
   ])
     // then initialize answers
@@ -94,9 +94,10 @@ async function init(answers) {
     const q9 = await generateMarkdown.email(answers.email)
     const q10 = await generateMarkdown.collaborators(answers.collaborators)
     const q11 = await generateMarkdown.credits(answers.credits)
+    const q12 = await generateMarkdown.license(answers.license)
 
     // push responses to an array in the same order
-    responseArray.push(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11);
+    responseArray.push(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12);
 
     // console.log(responseArray)
    
