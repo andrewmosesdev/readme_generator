@@ -20,14 +20,14 @@ async function projectSummary(projectSummary) {
 async function tableOfContents() {
   const output = `
   ## Table of Contents:
-  * [Installation](#Installation) 
-  * [Testing](#Testing)
-  * [Usage](#Usage)
-  * [GitHub](#Repository)
-  * [Email](#Email)
-  * [Collaborators](#Collaborators)
-  * [Credits](#Credits)
-  * [License](#License)
+  * [Installation](#installation) 
+  * [Testing](#testing)
+  * [Usage](#usage)
+  * [Repository](#repository)
+  * [Email](#email)
+  * [Collaborators](#collaborators)
+  * [Credits](#credits)
+  * [License](#license)
   `
   return output
 }
