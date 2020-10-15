@@ -106,11 +106,13 @@ async function credits(credits) {
 
 async function badge(badge) {
   if(badge === "MIT") {
-    return `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) \n`
-  } else if(badge === "GPL") {
-    return `![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg) \n`
-  } else if(badge === "Apache") {
-    return `![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg) \n`
+    return `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) \n`;
+  } 
+  if(badge === "GPL") {
+    return `![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg) \n`;
+  } 
+  if(badge === "Apache") {
+    return `![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)] \n`;
   }
 }
 
