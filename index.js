@@ -98,7 +98,7 @@ async function init(answers) {
     const licenseBadge = await generateMarkdown.badge(answers.license)
 
     // push responses to an array in the same order
-    responseArray.push(q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12, licenseBadge);
+    responseArray.push(q1, licenseBadge, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12);
 
     // console.log(responseArray)
    

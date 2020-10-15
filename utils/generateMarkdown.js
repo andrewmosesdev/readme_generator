@@ -11,7 +11,8 @@ async function projectTitle(projectTitle) {
 
 async function projectSummary(projectSummary) {
   const summaryString = projectSummary;
-  const output = `## ${summaryString} 
+  const output = `## Summary:
+  ${summaryString} 
   \n
   `;
   return output
@@ -35,7 +36,8 @@ async function tableOfContents() {
 async function installation(installation) {
   const installString = installation;
   const output = `
-  ## Installation: ${installString} 
+  ## Installation: 
+  ${installString} 
   \n
   `
   return output
@@ -44,7 +46,8 @@ async function installation(installation) {
 async function testing(testing) {
   const testingString = testing;
   const output = `
-  ## Testing: ${testingString} 
+  ## Testing: 
+  ${testingString} 
   \n
   `
   return output
@@ -53,7 +56,8 @@ async function testing(testing) {
 async function usage(usage) {
   const usageString = usage;
   const output = `
-  ## Usage: ${usageString}
+  ## Usage: 
+  ${usageString}
   \n
   `
   return output
@@ -62,7 +66,8 @@ async function usage(usage) {
 async function githubLink(githubLink) {
   const gitLinkString = githubLink;
   const output = `
-  ## Repository: ${gitLinkString} 
+  ## Repository: 
+  ${gitLinkString} 
   \n
   `
   return output 
@@ -71,7 +76,8 @@ async function githubLink(githubLink) {
 async function deployedLink(deployedLink) {
   const deployedString = deployedLink;
   const output = `
-  ## Deployment: ${deployedString} 
+  ## Deployment: 
+  ${deployedString} 
   \n
   `
   return output
@@ -80,7 +86,9 @@ async function deployedLink(deployedLink) {
 async function email(email) {
   const emailString = email;
   const output = `
-  ## Email ${emailString}
+  ## Email 
+  Contact me here: 
+  ${emailString}
   \n
   `
   return output
@@ -89,7 +97,8 @@ async function email(email) {
 async function collaborators(collaborators) {
   const collabString = collaborators;
   const output = `
-  ## Collaborators: ${collabString}
+  ## Collaborators: 
+  ${collabString}
   \n
   `
   return output
@@ -98,7 +107,8 @@ async function collaborators(collaborators) {
 async function credits(credits) {
   const creditsString = credits;
   const output = `
-  ## Credits: ${creditsString} 
+  ## Credits: 
+  ${creditsString} 
   \n
   `
   return output
@@ -122,7 +132,7 @@ async function license(license) {
     
     MIT License
 
-    Copyright (c) [year] [fullname]
+    Copyright (c) ${new Date().getFullYear()}
     
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal

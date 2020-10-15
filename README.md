@@ -1,8 +1,13 @@
-# asdf 
-  
+# README Generator 
+  ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) 
 
-  ## asdf 
+## Summary:
+  This application allows a user to easily create a professional, informative README file by simply following the input inquiries and responding accordingly. It was built from the ground up using Node.js and JavaScript. 
   
+  
+  ## Demo:
+  ![Demo](assets/tutorial.gif)
+  https://drive.google.com/file/d/1v0928G8w2wlcdE4FXD3uPiB_VF1NarDl/view
 
   
   ## Table of Contents:
@@ -15,42 +20,51 @@
   * [Credits](#credits)
   * [License](#license)
   
-  ## Installation: asdf 
+  ## Installation: 
+  Clone repository, then run 'npm install', and within terminal/bash, use command 'node index.js' 
   
 
   
-  ## Testing: asdf 
+  ## Testing: 
+  No tests were run on this application. 
   
 
   
-  ## Usage: asdf
+  ## Usage: 
+  Use the command 'node index.js in terminal/bash.
   
 
   
-  ## Repository: asdf 
+  ## Repository: 
+  github.com/andrewmosesdrive/readme_generator 
   
 
   
-  ## Deployment: asdf 
+  ## Deployment: 
+  andrewmosesdrive.github.io/reademe_generator 
   
 
   
-  ## Email asdf
+  ## Email 
+  Contact me here: 
+  andrewmosesdrive@gmail.com
   
 
   
-  ## Collaborators: asdf
+  ## Collaborators: 
+  No collaborators on this project, it was solely built by the author (@andrewmosesdrive).
   
 
   
-  ## Credits: asdf 
+  ## Credits: 
+  Credit to @alligatormonday and @daneb91 for assistance with async functions and general troubleshooting. 
   
 
   ## License:
     
     MIT License
 
-    Copyright (c) [year] [fullname]
+    Copyright (c) 2020
     
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -68,4 +82,4 @@
     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) 
+    SOFTWARE.
