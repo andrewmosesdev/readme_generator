@@ -7,7 +7,8 @@
   
   ## Demo:
   ![Demo](assets/tutorial.gif)
-  https://drive.google.com/file/d/1v0928G8w2wlcdE4FXD3uPiB_VF1NarDl/view
+  
+  [Demo Link](https://drive.google.com/file/d/1v0928G8w2wlcdE4FXD3uPiB_VF1NarDl/view)
 
   
   ## Table of Contents:
